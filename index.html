@@ -21,6 +21,7 @@
       --accent-soft: rgba(16,185,129,0.10);
       --shadow: 0 20px 70px rgba(16, 24, 40, .08);
       --shadow-2: 0 26px 90px rgba(16,185,129,.10);
+      --shadow-hot: 0 22px 60px rgba(16,185,129,.18);
       --radius: 28px;
       --max: 1240px;
     }
@@ -235,8 +236,8 @@
       position: absolute;
       inset: 0;
       border-radius: 34px;
-      background: linear-gradient(135deg, rgba(16,185,129,.10), transparent 50%, rgba(255,255,255,.55));
-      filter: blur(20px);
+      background: linear-gradient(135deg, rgba(16,185,129,.12), transparent 50%, rgba(255,255,255,.55));
+      filter: blur(22px);
       transform: scale(1.02);
     }
 
@@ -245,15 +246,16 @@
       overflow: hidden;
       border-radius: 34px;
       border: 1px solid rgba(8,19,15,.07);
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.90);
       box-shadow: var(--shadow-2);
       padding: 16px;
     }
 
     .screen {
+      position: relative;
       border-radius: 28px;
       border: 1px solid rgba(8,19,15,.06);
-      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(245,251,247,.98));
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(245,251,247,.98));
       overflow: hidden;
     }
 
@@ -263,7 +265,7 @@
       justify-content: space-between;
       padding: 14px 16px;
       border-bottom: 1px solid rgba(8,19,15,.05);
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.90);
     }
 
     .dots {
@@ -279,14 +281,48 @@
     }
 
     .screen-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .28em;
-      color: rgba(8,19,15,.38);
-      font-weight: 700;
+      letter-spacing: .24em;
+      color: rgba(8,19,15,.42);
+      font-weight: 800;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(16,185,129,.65);
+      animation: pulse 1.8s infinite;
+      flex: 0 0 auto;
+    }
+
+    .screen-badge {
+      position: absolute;
+      top: 54px;
+      right: 16px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(16,185,129,.10);
+      border: 1px solid rgba(16,185,129,.16);
+      color: rgba(5,92,68,.92);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
     }
 
     .feed {
+      position: relative;
       padding: 18px;
       display: grid;
       gap: 14px;
@@ -294,12 +330,52 @@
       overflow: hidden;
     }
 
+    .feed::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 92px;
+      background: linear-gradient(to bottom, rgba(249,252,250,0), #f9fcfa 80%);
+      pointer-events: none;
+    }
+
     .signal-card {
+      position: relative;
       border-radius: 24px;
       border: 1px solid rgba(8,19,15,.05);
       background: rgba(255,255,255,.92);
       padding: 18px;
       box-shadow: 0 12px 28px rgba(16,24,40,.04);
+      animation: fadeUp .7s ease both;
+    }
+
+    .signal-card:nth-child(2) {
+      animation-delay: .14s;
+    }
+
+    .signal-card.primary {
+      border: 1px solid rgba(16,185,129,.24);
+      box-shadow: var(--shadow-hot);
+      transform: scale(1.015);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,255,250,.96));
+    }
+
+    .new-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(16,185,129,.10);
+      border: 1px solid rgba(16,185,129,.14);
+      color: rgba(5,92,68,.92);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 900;
     }
 
     .signal-top {
@@ -308,6 +384,7 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 14px;
+      padding-right: 62px;
     }
 
     .pair {
@@ -318,14 +395,15 @@
 
     .score-pill {
       border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(16,185,129,.09);
-      color: rgba(5,92,68,.90);
+      padding: 8px 14px;
+      background: linear-gradient(180deg, #34d399, #10b981);
+      color: #ffffff;
       font-size: 11px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      font-weight: 800;
-      border: 1px solid rgba(16,185,129,.12);
+      font-weight: 900;
+      box-shadow: 0 6px 18px rgba(16,185,129,.30);
+      border: 0;
     }
 
     .signal-grid {
@@ -357,6 +435,26 @@
       color: rgba(8,19,15,.52);
       font-size: 13px;
       line-height: 1.7;
+    }
+
+    .mini-feed-status {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(8,19,15,.04);
+      color: rgba(8,19,15,.56);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .mini-feed-status .ping {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
     }
 
     .section {
@@ -551,6 +649,23 @@
       line-height: 1.5;
     }
 
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16,185,129,.60); }
+      70% { box-shadow: 0 0 0 9px rgba(16,185,129,0); }
+      100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 1100px) {
       .hero-grid,
       .benefit-grid,
@@ -630,9 +745,16 @@
         padding: 12px 14px;
       }
 
+      .screen-badge {
+        top: 48px;
+        right: 12px;
+        padding: 7px 10px;
+        font-size: 9px;
+      }
+
       .screen-label {
         font-size: 9px;
-        letter-spacing: .22em;
+        letter-spacing: .18em;
       }
 
       .feed {
@@ -645,8 +767,18 @@
         border-radius: 20px;
       }
 
+      .signal-card.primary {
+        transform: none;
+      }
+
+      .new-pill {
+        top: 12px;
+        right: 12px;
+      }
+
       .signal-top {
         align-items: flex-start;
+        padding-right: 56px;
       }
 
       .pair {
@@ -720,7 +852,7 @@
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://t.me/+pR5RzyPgUKY2NDZh" target="_blank" rel="noopener noreferrer">Entrar no canal gratuito →</a>
+            <a class="btn btn-primary" href="https://t.me/+pR5RzyPgUKY2NDZh" target="_blank" rel="noopener noreferrer">Entrar no radar gratuito →</a>
             <a class="btn btn-secondary" href="#prova">Ver exemplo do radar</a>
           </div>
 
@@ -742,11 +874,17 @@
                   <span class="dot"></span>
                   <span class="dot"></span>
                 </div>
-                <div class="screen-label">radar em execução</div>
+                <div class="screen-label">
+                  <span class="live-dot"></span>
+                  live radar
+                </div>
               </div>
 
+              <div class="screen-badge">+3 sinais detectados</div>
+
               <div class="feed">
-                <div class="signal-card">
+                <div class="signal-card primary">
+                  <div class="new-pill">novo</div>
                   <div class="signal-top">
                     <div class="pair">COS/USDT</div>
                     <div class="score-pill">score 83</div>
@@ -769,7 +907,11 @@
                       <div class="signal-v">movimento acima da média</div>
                     </div>
                   </div>
-                  <div class="signal-note">Exemplo de leitura do radar. O canal gratuito mostra alertas selecionados para você acompanhar o sistema funcionando ao vivo.</div>
+                  <div class="signal-note">movimento detectado • continuidade em observação</div>
+                  <div class="mini-feed-status">
+                    <span class="ping"></span>
+                    atualização recente do radar
+                  </div>
                 </div>
 
                 <div class="signal-card">
@@ -795,7 +937,33 @@
                       <div class="signal-v">oportunidade em observação</div>
                     </div>
                   </div>
-                  <div class="signal-note">O FREE não despeja tudo no chat. Ele mantém o feed mais limpo e mostra sinais escolhidos para leitura rápida.</div>
+                  <div class="signal-note">sinal identificado pelo radar • aguardando confirmação</div>
+                </div>
+
+                <div class="signal-card">
+                  <div class="signal-top">
+                    <div class="pair">WIF</div>
+                    <div class="score-pill">score 74</div>
+                  </div>
+                  <div class="signal-grid">
+                    <div>
+                      <div class="signal-k">Radar class</div>
+                      <div class="signal-v">STRONG</div>
+                    </div>
+                    <div>
+                      <div class="signal-k">Setup</div>
+                      <div class="signal-v">pullback • continuation</div>
+                    </div>
+                    <div>
+                      <div class="signal-k">Plan</div>
+                      <div class="signal-v">monitorando fluxo</div>
+                    </div>
+                    <div>
+                      <div class="signal-k">Leitura</div>
+                      <div class="signal-v">pressão compradora ativa</div>
+                    </div>
+                  </div>
+                  <div class="signal-note">feed ativo • novos destaques entram conforme o radar identifica</div>
                 </div>
               </div>
             </div>
@@ -922,7 +1090,7 @@
           </h3>
           <p style="max-width:700px;margin:18px auto 0;color:rgba(8,19,15,.58);font-size:16px;line-height:1.8;">Sem custo para entrar. Alertas selecionados. Acesso imediato para ver o sistema em ação.</p>
           <div class="cta-row" style="justify-content:center; margin-top:28px;">
-            <a class="btn btn-primary" href="https://t.me/+pR5RzyPgUKY2NDZh" target="_blank" rel="noopener noreferrer">Entrar no canal gratuito →</a>
+            <a class="btn btn-primary" href="https://t.me/+pR5RzyPgUKY2NDZh" target="_blank" rel="noopener noreferrer">Entrar no radar gratuito →</a>
             <a class="btn btn-secondary" href="#prova">Ver leitura do radar</a>
           </div>
         </div>
