@@ -7,7 +7,7 @@
   <meta name="description" content="Canal gratuito do Nanonicoins Radar. Alertas selecionados de CEX e DEX com score, setup e leitura rápida." />
   <style>
     :root {
-      --bg: #f4f7f5;
+      --bg: #f3f7f4;
       --bg-2: #ffffff;
       --panel: rgba(255,255,255,0.90);
       --panel-2: rgba(255,255,255,0.96);
@@ -38,7 +38,7 @@
         radial-gradient(circle at 12% 18%, rgba(16,185,129,.06), transparent 35%),
         radial-gradient(circle at 88% 10%, rgba(16,185,129,.05), transparent 32%),
         radial-gradient(circle at 50% 140%, rgba(5,150,105,.04), transparent 38%),
-        linear-gradient(180deg, #f4f7f5 0%, #eef5f1 55%, #e9f2ed 100%);
+        linear-gradient(180deg, #f3f7f4 0%, #edf4f0 55%, #e8f0eb 100%);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -54,7 +54,7 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(22px);
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.90);
       border-bottom: 1px solid rgba(16,185,129,.08);
       box-shadow: 0 10px 30px rgba(16,24,40,.03);
     }
@@ -70,43 +70,52 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       min-width: 0;
     }
 
     .brand-mark {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      border: 1px solid rgba(16,185,129,.18);
-      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,255,250,.96));
+      width: 72px;
+      height: 72px;
+      border-radius: 22px;
+      border: 1px solid rgba(16,185,129,.22);
+      background: linear-gradient(180deg, rgba(255,255,255,.99), rgba(241,255,248,.97));
       display: grid;
       place-items: center;
       box-shadow:
-        0 14px 36px rgba(16,185,129,.12),
-        inset 0 1px 0 rgba(255,255,255,.72);
+        0 20px 46px rgba(16,185,129,.16),
+        inset 0 1px 0 rgba(255,255,255,.78);
       overflow: hidden;
       flex: 0 0 auto;
-      padding: 8px;
+      padding: 10px;
       position: relative;
     }
 
     .brand-mark::before {
       content: "";
       position: absolute;
-      inset: -30%;
-      background: radial-gradient(circle, rgba(16,185,129,.14), transparent 60%);
-      filter: blur(18px);
+      inset: -28%;
+      background: radial-gradient(circle, rgba(16,185,129,.18), transparent 60%);
+      filter: blur(22px);
       z-index: 0;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
+      pointer-events: none;
     }
 
     .brand-mark img {
       position: relative;
       z-index: 1;
-      width: 38px;
-      height: 38px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
-      filter: drop-shadow(0 4px 10px rgba(16,185,129,.14));
+      filter: drop-shadow(0 6px 14px rgba(16,185,129,.18));
     }
 
     .eyebrow {
@@ -147,9 +156,10 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.78);
       border-color: rgba(8,19,15,.08);
       color: var(--text);
+      box-shadow: 0 8px 22px rgba(16,24,40,.03);
     }
 
     .hero {
@@ -209,7 +219,7 @@
 
     .hero-title .muted {
       display: block;
-      color: #95a39d;
+      color: #94a29c;
     }
 
     .hero-desc {
@@ -328,28 +338,32 @@
 
     .screen-badge {
       position: absolute;
-      top: 60px;
-      right: 14px;
-      z-index: 3;
+      top: 66px;
+      right: 18px;
+      z-index: 4;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(16,185,129,.12);
-      border: 1px solid rgba(16,185,129,.16);
+      background: linear-gradient(180deg, rgba(241,255,248,.98), rgba(224,252,239,.96));
+      border: 1px solid rgba(16,185,129,.20);
       color: rgba(5,92,68,.92);
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 800;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(16,185,129,.10);
+      letter-spacing: .17em;
+      font-weight: 900;
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 16px 34px rgba(16,185,129,.16),
+        inset 0 1px 0 rgba(255,255,255,.72);
+      white-space: nowrap;
     }
 
     .feed {
       position: relative;
-      padding: 18px;
+      padding: 72px 18px 18px;
       display: grid;
       gap: 14px;
       max-height: 560px;
@@ -363,7 +377,7 @@
       right: 0;
       bottom: 0;
       height: 96px;
-      background: linear-gradient(to bottom, rgba(249,252,250,0), #f1f7f3 80%);
+      background: linear-gradient(to bottom, rgba(249,252,250,0), #eef5f1 80%);
       pointer-events: none;
     }
 
@@ -726,15 +740,15 @@
       .brand { gap: 12px; }
 
       .brand-mark {
-        width: 50px;
-        height: 50px;
-        border-radius: 16px;
-        padding: 7px;
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        padding: 8px;
       }
 
       .brand-mark img {
-        width: 34px;
-        height: 34px;
+        width: 40px;
+        height: 40px;
       }
 
       .eyebrow {
@@ -779,10 +793,12 @@
       }
 
       .screen-badge {
-        top: 50px;
+        top: 58px;
         right: 12px;
-        padding: 7px 10px;
+        min-height: 36px;
+        padding: 9px 12px;
         font-size: 9px;
+        letter-spacing: .14em;
       }
 
       .screen-label {
@@ -791,7 +807,7 @@
       }
 
       .feed {
-        padding: 12px;
+        padding: 64px 12px 12px;
         gap: 12px;
       }
 
@@ -856,7 +872,7 @@
     <div class="container topbar-inner">
       <div class="brand">
         <div class="brand-mark">
-          <img src="assets/logo.png" alt="Nanonicoins logo" width="38" height="38" />
+          <img src="assets/logo.png" alt="Nanonicoins logo" width="48" height="48" />
         </div>
         <div>
           <p class="eyebrow">Nanonicoins</p>
