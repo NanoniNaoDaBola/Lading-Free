@@ -7,18 +7,20 @@
   <meta name="description" content="Entre no canal gratuito do Nanonicoins Radar e veja alertas selecionados antes da maioria." />
   <style>
     :root {
-      --bg: #f7faf8;
+      --bg: #f9fcfa;
       --bg-2: #ffffff;
-      --panel: rgba(255,255,255,0.84);
-      --panel-2: rgba(255,255,255,0.92);
-      --border: rgba(15,23,42,0.08);
+      --panel: rgba(255,255,255,0.86);
+      --panel-2: rgba(255,255,255,0.94);
+      --border: rgba(15,23,42,0.07);
       --text: #08130f;
       --muted: rgba(8,19,15,0.66);
       --muted-2: rgba(8,19,15,0.42);
       --accent: #10b981;
       --accent-2: #059669;
-      --accent-soft: rgba(16,185,129,0.12);
-      --shadow: 0 24px 80px rgba(16, 24, 40, .10);
+      --accent-3: #34d399;
+      --accent-soft: rgba(16,185,129,0.10);
+      --shadow: 0 20px 70px rgba(16, 24, 40, .08);
+      --shadow-2: 0 26px 90px rgba(16,185,129,.10);
       --radius: 28px;
       --max: 1240px;
     }
@@ -31,10 +33,10 @@
       color: var(--text);
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 10% 10%, rgba(16,185,129,.10), transparent 22%),
-        radial-gradient(circle at 85% 14%, rgba(16,185,129,.10), transparent 22%),
-        radial-gradient(circle at 50% 120%, rgba(5,150,105,.08), transparent 24%),
-        linear-gradient(180deg, #fbfffd 0%, #f4faf7 55%, #eef8f3 100%);
+        radial-gradient(circle at 10% 10%, rgba(16,185,129,.08), transparent 22%),
+        radial-gradient(circle at 85% 14%, rgba(16,185,129,.08), transparent 20%),
+        radial-gradient(circle at 50% 120%, rgba(5,150,105,.05), transparent 24%),
+        linear-gradient(180deg, #fefffe 0%, #f7fbf8 55%, #f0f8f3 100%);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -50,8 +52,8 @@
       top: 0;
       z-index: 40;
       backdrop-filter: blur(18px);
-      background: rgba(255,255,255,.76);
-      border-bottom: 1px solid rgba(8,19,15,.06);
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(8,19,15,.05);
     }
 
     .topbar-inner {
@@ -66,18 +68,21 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      min-width: 0;
     }
 
     .brand-mark {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 16px;
       border: 1px solid rgba(8,19,15,.08);
       background: rgba(255,255,255,.95);
       display: grid;
       place-items: center;
-      box-shadow: 0 10px 30px rgba(16,185,129,.10);
+      box-shadow: 0 10px 30px rgba(16,185,129,.08);
       overflow: hidden;
+      flex: 0 0 auto;
+      padding: 8px;
     }
 
     .eyebrow {
@@ -93,6 +98,7 @@
       margin: 0;
       font-size: 14px;
       font-weight: 800;
+      line-height: 1.2;
     }
 
     .btn {
@@ -111,19 +117,19 @@
     .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      background: linear-gradient(180deg, #19d08f 0%, #10b981 100%);
+      background: linear-gradient(180deg, var(--accent-3) 0%, var(--accent) 100%);
       color: #ffffff;
-      box-shadow: 0 16px 40px rgba(16,185,129,.24);
+      box-shadow: 0 16px 42px rgba(16,185,129,.22);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,.7);
-      border-color: rgba(8,19,15,.10);
+      background: rgba(255,255,255,.76);
+      border-color: rgba(8,19,15,.08);
       color: var(--text);
     }
 
     .hero {
-      padding: 54px 0 28px;
+      padding: 54px 0 30px;
     }
 
     .hero-grid {
@@ -144,7 +150,7 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(8,19,15,.08);
-      background: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.82);
       text-transform: uppercase;
       letter-spacing: .16em;
       font-size: 12px;
@@ -167,6 +173,7 @@
       line-height: .95;
       letter-spacing: -0.06em;
       font-weight: 800;
+      max-width: 760px;
     }
 
     .hero-title .muted {
@@ -178,7 +185,7 @@
       margin: 26px 0 0;
       max-width: 700px;
       font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.85;
+      line-height: 1.82;
       color: var(--muted);
     }
 
@@ -196,9 +203,9 @@
       margin-top: 18px;
       padding: 12px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(16,185,129,.18);
-      background: rgba(16,185,129,.08);
-      color: rgba(5,92,68,.92);
+      border: 1px solid rgba(16,185,129,.15);
+      background: rgba(16,185,129,.06);
+      color: rgba(5,92,68,.88);
       font-size: 13px;
       font-weight: 700;
     }
@@ -214,6 +221,7 @@
 
     .hero-media {
       position: relative;
+      align-self: start;
     }
 
     .hero-media::before {
@@ -221,7 +229,7 @@
       position: absolute;
       inset: 0;
       border-radius: 34px;
-      background: linear-gradient(135deg, rgba(16,185,129,.12), transparent 50%, rgba(255,255,255,.6));
+      background: linear-gradient(135deg, rgba(16,185,129,.10), transparent 50%, rgba(255,255,255,.55));
       filter: blur(20px);
       transform: scale(1.02);
     }
@@ -230,16 +238,16 @@
       position: relative;
       overflow: hidden;
       border-radius: 34px;
-      border: 1px solid rgba(8,19,15,.08);
-      background: rgba(255,255,255,.84);
-      box-shadow: var(--shadow);
-      padding: 18px;
+      border: 1px solid rgba(8,19,15,.07);
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow-2);
+      padding: 16px;
     }
 
     .screen {
       border-radius: 28px;
-      border: 1px solid rgba(8,19,15,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(244,250,247,.95));
+      border: 1px solid rgba(8,19,15,.06);
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(245,251,247,.98));
       overflow: hidden;
     }
 
@@ -248,8 +256,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
-      border-bottom: 1px solid rgba(8,19,15,.06);
-      background: rgba(255,255,255,.85);
+      border-bottom: 1px solid rgba(8,19,15,.05);
+      background: rgba(255,255,255,.88);
     }
 
     .dots {
@@ -276,14 +284,16 @@
       padding: 18px;
       display: grid;
       gap: 14px;
+      max-height: 660px;
+      overflow: hidden;
     }
 
     .signal-card {
       border-radius: 24px;
-      border: 1px solid rgba(8,19,15,.06);
-      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(8,19,15,.05);
+      background: rgba(255,255,255,.92);
       padding: 18px;
-      box-shadow: 0 14px 34px rgba(16,24,40,.06);
+      box-shadow: 0 12px 28px rgba(16,24,40,.04);
     }
 
     .signal-top {
@@ -303,13 +313,13 @@
     .score-pill {
       border-radius: 999px;
       padding: 8px 12px;
-      background: rgba(16,185,129,.10);
-      color: rgba(5,92,68,.92);
+      background: rgba(16,185,129,.09);
+      color: rgba(5,92,68,.90);
       font-size: 11px;
       letter-spacing: .16em;
       text-transform: uppercase;
       font-weight: 800;
-      border: 1px solid rgba(16,185,129,.14);
+      border: 1px solid rgba(16,185,129,.12);
     }
 
     .signal-grid {
@@ -337,7 +347,7 @@
     .signal-note {
       margin-top: 14px;
       padding-top: 14px;
-      border-top: 1px solid rgba(8,19,15,.06);
+      border-top: 1px solid rgba(8,19,15,.05);
       color: rgba(8,19,15,.52);
       font-size: 13px;
       line-height: 1.7;
@@ -387,10 +397,10 @@
     .card,
     .proof-card,
     .final-panel {
-      border: 1px solid rgba(8,19,15,.08);
+      border: 1px solid rgba(8,19,15,.07);
       border-radius: 30px;
-      background: rgba(255,255,255,.82);
-      box-shadow: 0 10px 40px rgba(16,24,40,.06);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 10px 34px rgba(16,24,40,.05);
     }
 
     .card {
@@ -401,11 +411,11 @@
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      border: 1px solid rgba(8,19,15,.08);
-      background: rgba(16,185,129,.08);
+      border: 1px solid rgba(8,19,15,.07);
+      background: rgba(16,185,129,.07);
       display: grid;
       place-items: center;
-      color: rgba(5,92,68,.94);
+      color: rgba(5,92,68,.92);
       font-size: 20px;
     }
 
@@ -452,8 +462,8 @@
     .proof-mini {
       margin-top: 6px;
       border-radius: 20px;
-      border: 1px solid rgba(8,19,15,.06);
-      background: rgba(244,250,247,.9);
+      border: 1px solid rgba(8,19,15,.05);
+      background: rgba(244,250,247,.72);
       padding: 14px;
     }
 
@@ -476,8 +486,8 @@
     .final-panel {
       padding: 44px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(16,185,129,.08), rgba(255,255,255,.96), rgba(255,255,255,.82));
-      box-shadow: 0 30px 100px rgba(16,24,40,.08);
+      background: linear-gradient(135deg, rgba(16,185,129,.06), rgba(255,255,255,.96), rgba(255,255,255,.84));
+      box-shadow: 0 24px 80px rgba(16,24,40,.06);
       border-radius: 36px;
     }
 
@@ -503,7 +513,7 @@
       z-index: 40;
       padding: 12px;
       border-top: 1px solid rgba(8,19,15,.08);
-      background: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.88);
       backdrop-filter: blur(18px);
     }
 
@@ -543,26 +553,126 @@
         grid-template-columns: 1fr;
       }
 
-      .hero { padding-top: 40px; }
-      .hero-media { order: -1; }
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-grid {
+        gap: 24px;
+      }
+
+      .hero-media {
+        order: 2;
+      }
+
+      .feed {
+        max-height: none;
+      }
     }
 
     @media (max-width: 760px) {
       .topbar-inner { padding: 14px 0; }
+
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: .28em;
+      }
+
+      .brand h1 {
+        font-size: 13px;
+      }
+
       .btn { padding: 13px 18px; }
-      .hero-title { font-size: clamp(42px, 13vw, 64px); }
-      .hero-desc { font-size: 16px; line-height: 1.8; }
+      .hero { padding: 24px 0 18px; }
+
+      .hero-title {
+        font-size: clamp(40px, 12vw, 60px);
+      }
+
+      .hero-desc {
+        font-size: 15px;
+        line-height: 1.76;
+      }
+
       .cta-row { flex-direction: column; }
       .cta-row .btn { width: 100%; }
-      .section { padding: 72px 0; }
+
+      .section { padding: 62px 0; }
+
       .card,
       .proof-card,
       .final-panel,
-      .media-card { padding: 22px; }
-      .screen { border-radius: 24px; }
-      .signal-grid { grid-template-columns: 1fr; }
-      .final-panel { margin-bottom: 84px; }
-      .sticky-mobile { display: block; }
+      .media-card {
+        padding: 20px;
+      }
+
+      .screen {
+        border-radius: 22px;
+      }
+
+      .screen-top {
+        padding: 12px 14px;
+      }
+
+      .screen-label {
+        font-size: 9px;
+        letter-spacing: .22em;
+      }
+
+      .feed {
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .signal-card {
+        padding: 16px;
+        border-radius: 20px;
+      }
+
+      .signal-top {
+        align-items: flex-start;
+      }
+
+      .pair {
+        font-size: 18px;
+      }
+
+      .score-pill {
+        padding: 7px 10px;
+        font-size: 10px;
+      }
+
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-note {
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .card h4,
+      .proof-card .headline {
+        font-size: 24px;
+      }
+
+      .final-panel {
+        margin-bottom: 84px;
+      }
+
+      .sticky-mobile {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -806,7 +916,7 @@
           </h3>
           <div class="cta-row" style="justify-content:center; margin-top:28px;">
             <a class="btn btn-primary" href="https://t.me/+pR5RzyPgUKY2NDZh" target="_blank" rel="noopener noreferrer">Entrar no canal gratuito →</a>
-            <a class="btn btn-secondary" href="#">Acesso aberto agora</a>
+            <a class="btn btn-secondary" href="#prova">Ver a estrutura</a>
           </div>
         </div>
       </div>
