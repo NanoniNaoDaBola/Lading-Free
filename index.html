@@ -9,8 +9,8 @@
     :root {
       --bg: #f9fcfa;
       --bg-2: #ffffff;
-      --panel: rgba(255,255,255,0.86);
-      --panel-2: rgba(255,255,255,0.94);
+      --panel: rgba(255,255,255,0.90);
+      --panel-2: rgba(255,255,255,0.96);
       --border: rgba(15,23,42,0.07);
       --text: #08130f;
       --muted: rgba(8,19,15,0.66);
@@ -19,15 +19,16 @@
       --accent-2: #059669;
       --accent-3: #34d399;
       --accent-soft: rgba(16,185,129,0.10);
-      --shadow: 0 20px 70px rgba(16, 24, 40, .08);
+      --shadow: 0 20px 70px rgba(16,24,40,.08);
       --shadow-2: 0 26px 90px rgba(16,185,129,.10);
-      --shadow-hot: 0 22px 60px rgba(16,185,129,.18);
+      --shadow-hot: 0 22px 60px rgba(16,185,129,.16);
       --radius: 28px;
       --max: 1240px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -51,9 +52,9 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 50;
       backdrop-filter: blur(18px);
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.82);
       border-bottom: 1px solid rgba(8,19,15,.05);
     }
 
@@ -62,7 +63,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 16px 0;
+      padding: 14px 0;
     }
 
     .brand {
@@ -73,17 +74,17 @@
     }
 
     .brand-mark {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       border: 1px solid rgba(8,19,15,.08);
-      background: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.96);
       display: grid;
       place-items: center;
-      box-shadow: 0 10px 30px rgba(16,185,129,.08);
+      box-shadow: 0 8px 24px rgba(16,185,129,.08);
       overflow: hidden;
       flex: 0 0 auto;
-      padding: 8px;
+      padding: 7px;
     }
 
     .eyebrow {
@@ -99,7 +100,7 @@
       margin: 0;
       font-size: 14px;
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .btn {
@@ -108,7 +109,7 @@
       justify-content: center;
       gap: 10px;
       border-radius: 999px;
-      padding: 15px 24px;
+      padding: 14px 24px;
       font-weight: 800;
       transition: .22s ease;
       border: 1px solid transparent;
@@ -130,36 +131,37 @@
     }
 
     .hero {
-      padding: 54px 0 30px;
+      padding: 38px 0 30px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      gap: 52px;
+      grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+      gap: 34px;
       align-items: center;
     }
 
     .hero-copy {
       position: relative;
       z-index: 2;
+      min-width: 0;
     }
 
     .chips {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .chip {
-      padding: 10px 14px;
+      padding: 9px 13px;
       border-radius: 999px;
       border: 1px solid rgba(8,19,15,.08);
       background: rgba(255,255,255,.82);
       text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: 12px;
+      letter-spacing: .15em;
+      font-size: 11px;
       font-weight: 700;
       color: rgba(8,19,15,.58);
     }
@@ -167,47 +169,48 @@
     .hero-kicker {
       margin: 0;
       font-size: 11px;
-      letter-spacing: .42em;
+      letter-spacing: .38em;
       text-transform: uppercase;
       color: rgba(5,150,105,.92);
       font-weight: 800;
     }
 
     .hero-title {
-      margin: 18px 0 0;
-      font-size: clamp(46px, 7vw, 86px);
-      line-height: .95;
-      letter-spacing: -0.06em;
+      margin: 16px 0 0;
+      max-width: 720px;
+      font-size: clamp(44px, 5vw, 78px);
+      line-height: .94;
+      letter-spacing: -0.055em;
       font-weight: 800;
-      max-width: 760px;
+      text-wrap: balance;
     }
 
     .hero-title .muted {
       display: block;
-      color: var(--muted-2);
+      color: #92a09a;
     }
 
     .hero-desc {
-      margin: 26px 0 0;
-      max-width: 700px;
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.82;
+      margin: 22px 0 0;
+      max-width: 650px;
+      font-size: clamp(16px, 1.6vw, 19px);
+      line-height: 1.78;
       color: var(--muted);
     }
 
     .cta-row {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 34px;
+      margin-top: 28px;
     }
 
     .micro-proof {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       margin-top: 18px;
-      padding: 12px 16px;
+      padding: 11px 15px;
       border-radius: 999px;
       border: 1px solid rgba(16,185,129,.15);
       background: rgba(16,185,129,.06);
@@ -219,15 +222,14 @@
     .meta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px 24px;
-      margin-top: 28px;
+      gap: 14px 22px;
+      margin-top: 24px;
       color: rgba(8,19,15,.46);
       font-size: 14px;
     }
 
     .hero-media {
       position: relative;
-      align-self: start;
       z-index: 1;
     }
 
@@ -244,26 +246,27 @@
     .media-card {
       position: relative;
       overflow: hidden;
-      border-radius: 34px;
+      border-radius: 32px;
       border: 1px solid rgba(8,19,15,.07);
       background: rgba(255,255,255,.90);
       box-shadow: var(--shadow-2);
-      padding: 16px;
+      padding: 14px;
     }
 
     .screen {
       position: relative;
-      border-radius: 28px;
+      border-radius: 24px;
       border: 1px solid rgba(8,19,15,.06);
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(245,251,247,.98));
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(245,251,247,.98));
       overflow: hidden;
+      min-height: 620px;
     }
 
     .screen-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 16px;
+      padding: 13px 15px;
       border-bottom: 1px solid rgba(8,19,15,.05);
       background: rgba(255,255,255,.90);
     }
@@ -286,7 +289,7 @@
       gap: 8px;
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .24em;
+      letter-spacing: .22em;
       color: rgba(8,19,15,.42);
       font-weight: 800;
     }
@@ -303,22 +306,23 @@
 
     .screen-badge {
       position: absolute;
-      top: 54px;
-      right: 16px;
+      top: 60px;
+      right: 14px;
       z-index: 3;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(16,185,129,.10);
+      background: rgba(16,185,129,.12);
       border: 1px solid rgba(16,185,129,.16);
       color: rgba(5,92,68,.92);
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .16em;
+      letter-spacing: .14em;
       font-weight: 800;
       backdrop-filter: blur(10px);
+      box-shadow: 0 10px 24px rgba(16,185,129,.10);
     }
 
     .feed {
@@ -326,7 +330,7 @@
       padding: 18px;
       display: grid;
       gap: 14px;
-      max-height: 660px;
+      max-height: 560px;
       overflow: hidden;
     }
 
@@ -336,31 +340,29 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 92px;
+      height: 96px;
       background: linear-gradient(to bottom, rgba(249,252,250,0), #f9fcfa 80%);
       pointer-events: none;
     }
 
     .signal-card {
       position: relative;
-      border-radius: 24px;
+      border-radius: 22px;
       border: 1px solid rgba(8,19,15,.05);
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       padding: 18px;
-      box-shadow: 0 12px 28px rgba(16,24,40,.04);
+      box-shadow: 0 10px 24px rgba(16,24,40,.04);
       animation: fadeUp .7s ease both;
     }
 
-    .signal-card:nth-child(2) {
-      animation-delay: .14s;
-    }
+    .signal-card:nth-child(2) { animation-delay: .14s; }
+    .signal-card:nth-child(3) { animation-delay: .22s; }
 
     .signal-card.primary {
-      border: 1px solid rgba(16,185,129,.24);
+      border: 1px solid rgba(16,185,129,.22);
       box-shadow: var(--shadow-hot);
-      transform: scale(1.015);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,255,250,.96));
+      transform: scale(1.01);
+      background: linear-gradient(180deg, rgba(255,255,255,.99), rgba(244,255,250,.97));
     }
 
     .new-pill {
@@ -373,7 +375,7 @@
       border: 1px solid rgba(16,185,129,.14);
       color: rgba(5,92,68,.92);
       font-size: 9px;
-      letter-spacing: .16em;
+      letter-spacing: .14em;
       text-transform: uppercase;
       font-weight: 900;
     }
@@ -384,7 +386,7 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 14px;
-      padding-right: 62px;
+      padding-right: 64px;
     }
 
     .pair {
@@ -399,11 +401,12 @@
       background: linear-gradient(180deg, #34d399, #10b981);
       color: #ffffff;
       font-size: 11px;
-      letter-spacing: .16em;
+      letter-spacing: .15em;
       text-transform: uppercase;
       font-weight: 900;
-      box-shadow: 0 6px 18px rgba(16,185,129,.30);
+      box-shadow: 0 6px 18px rgba(16,185,129,.28);
       border: 0;
+      flex: 0 0 auto;
     }
 
     .signal-grid {
@@ -414,7 +417,7 @@
 
     .signal-k {
       font-size: 10px;
-      letter-spacing: .20em;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(8,19,15,.36);
       font-weight: 700;
@@ -617,7 +620,7 @@
       z-index: 40;
       padding: 12px;
       border-top: 1px solid rgba(8,19,15,.08);
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.90);
       backdrop-filter: blur(18px);
     }
 
@@ -666,7 +669,7 @@
       }
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1180px) {
       .hero-grid,
       .benefit-grid,
       .proof-grid,
@@ -675,7 +678,7 @@
       }
 
       .hero {
-        padding-top: 40px;
+        padding-top: 34px;
       }
 
       .hero-grid {
@@ -686,6 +689,10 @@
         order: 2;
       }
 
+      .screen {
+        min-height: unset;
+      }
+
       .feed {
         max-height: none;
       }
@@ -694,9 +701,7 @@
     @media (max-width: 760px) {
       .topbar-inner { padding: 14px 0; }
 
-      .brand {
-        gap: 12px;
-      }
+      .brand { gap: 12px; }
 
       .brand-mark {
         width: 44px;
@@ -746,7 +751,7 @@
       }
 
       .screen-badge {
-        top: 48px;
+        top: 50px;
         right: 12px;
         padding: 7px 10px;
         font-size: 9px;
@@ -760,6 +765,10 @@
       .feed {
         padding: 12px;
         gap: 12px;
+      }
+
+      .feed::after {
+        height: 72px;
       }
 
       .signal-card {
@@ -778,7 +787,7 @@
 
       .signal-top {
         align-items: flex-start;
-        padding-right: 56px;
+        padding-right: 58px;
       }
 
       .pair {
